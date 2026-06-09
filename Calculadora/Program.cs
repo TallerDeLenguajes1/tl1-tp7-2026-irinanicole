@@ -70,8 +70,15 @@ if (esOperable)
                         Console.WriteLine($"{num_anterior} * {termino} = {numero.GetResultado()}");
                         break;
                     case 4:
-                        numero.Dividir(termino);
-                        Console.WriteLine($"{num_anterior} / {termino} = {numero.GetResultado()}");
+                        if (termino != 0)
+                        {
+                            numero.Dividir(termino);
+                            Console.WriteLine($"{num_anterior} / {termino} = {numero.GetResultado()}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No es posible dividir en 0");
+                        }
                         break;
                     default:
                         break;
