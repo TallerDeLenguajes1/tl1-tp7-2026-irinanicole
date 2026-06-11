@@ -18,6 +18,14 @@ namespace EspacioEmpleado
         private double sueldo;
         private Cargos cargo;
 
+        public string Nombre { get => nombre; }
+        public string Apellido { get => apellido; }
+        public DateTime FechaNacimiento { get => fechaNacimiento; }
+        public char EstadoCivil { get => estadoCivil; }
+        public DateTime FechaIngreso { get => fechaIngreso; }
+        public double Sueldo { get => CalcularSalario(); }
+        public Cargos Cargo { get => cargo; }
+
         public Empleado(string nombre, string apellido, DateTime fechaNacimiento, char estadoCivil, DateTime fechaIngreso, double sueldo, Cargos cargo)
         {
             this.nombre = nombre;
@@ -43,7 +51,7 @@ namespace EspacioEmpleado
             return ( DateTime.Now.Subtract(fechaNacimiento).Days / 365 );
         }
         /* iii. La cantidad de años que le falta al empleado para poder jubilarse, considerando que la edad de jubilación es de 65 */
-        public int AniosRestantesJubilacion()
+        public int AniosRestantesParaJubilarse()
         {
             return ( 65 - Edad() );
         }
