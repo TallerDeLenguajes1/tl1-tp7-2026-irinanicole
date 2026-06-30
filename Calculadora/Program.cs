@@ -108,7 +108,7 @@ if (esOperable)
         s = Console.ReadLine();
         esOperable = int.TryParse(s, out seguir);
     }
-
+    
 }
 else
 {
